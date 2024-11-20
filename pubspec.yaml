@@ -5,7 +5,7 @@ homepage: https://github.com/amaurel/rsa_pkcs
 repository: https://github.com/amaurel/rsa_pkcs
 
 environment:
-  sdk: ^3.0.0
+  sdk: ^2.18.0
 
 false_secrets:
   - /test/resource/*.pem
