@@ -113,14 +113,14 @@ class RSAPKCSParser {
     final List<ASN1Integer> asn1Ints = seq.elements.cast<ASN1Integer>();
     return RSAPrivateKey(
         asn1Ints[0].intValue,
-        asn1Ints[1].valueAsBigInteger,
+        asn1Ints[1].valueAsBigInteger ?? BigInt.zero,
         asn1Ints[2].intValue,
-        asn1Ints[3].valueAsBigInteger,
-        asn1Ints[4].valueAsBigInteger,
-        asn1Ints[5].valueAsBigInteger,
-        asn1Ints[6].valueAsBigInteger,
-        asn1Ints[7].valueAsBigInteger,
-        asn1Ints[8].valueAsBigInteger);
+        asn1Ints[3].valueAsBigInteger ?? BigInt.zero,
+        asn1Ints[4].valueAsBigInteger ?? BigInt.zero,
+        asn1Ints[5].valueAsBigInteger ?? BigInt.zero,
+        asn1Ints[6].valueAsBigInteger ?? BigInt.zero,
+        asn1Ints[7].valueAsBigInteger ?? BigInt.zero,
+        asn1Ints[8].valueAsBigInteger ?? BigInt.zero);
   }
 
   RSAPrivateKey _pkcs8PrivateKey(ASN1Sequence seq) {
@@ -163,7 +163,7 @@ class RSAPKCSParser {
 
   RSAPublicKey _pkcs1PublicKey(ASN1Sequence seq) {
     final List<ASN1Integer> asn1Ints = seq.elements.cast<ASN1Integer>();
-    return RSAPublicKey(asn1Ints[0].valueAsBigInteger, asn1Ints[1].intValue);
+    return RSAPublicKey(asn1Ints[0].valueAsBigInteger ?? BigInt.zero, asn1Ints[1].intValue);
   }
 
   RSAPublicKey _pkcs8PublicKey(ASN1Sequence seq) {
