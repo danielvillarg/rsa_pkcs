@@ -11,7 +11,7 @@ false_secrets:
   - /test/resource/*.pem
 
 dependencies:
-  asn1lib: ^1.5.0
+  asn1lib: ^1.4.1
 
 dev_dependencies:
   test: "^1.16.0"
